@@ -13,3 +13,21 @@ document.getElementById("myButton").addEventListener("click", function() {
         });
 });
 
+
+axios.get('https://dog.ceo/api/breeds/list') 
+        .then((response) => {
+            response.data.message.map(dog => {
+               var opt = document.createElement('option')
+               opt.innerHTML = dog;
+               opt.value = dog
+               select.appendChild(opt);
+        })
+});
+
+
+
+
+// document.getElementById("select").addEventListener("change", function() {
+//     axios.get('https://dog.ceo/api/breed/{what?}/images/random')
+    
+// });
